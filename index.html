@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注意！！！緊急尋人啟事</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #dc2626;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        main {
+            padding: 30px 0;
+        }
+        
+        .alert {
+            background-color: #fee2e2;
+            border: 2px solid #dc2626;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .alert-icon {
+            color: #dc2626;
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        .alert-content h2 {
+            color: #dc2626;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .alert-content p {
+            color: #7f1d1d;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .carousel {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .carousel-content {
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .carousel-prev {
+            left: 10px;
+        }
+        
+        .carousel-next {
+            right: 10px;
+        }
+        
+        .info-list {
+            list-style: none;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .info-icon {
+            color: #dc2626;
+            margin-right: 10px;
+            min-width: 24px;
+            text-align: center;
+        }
+        
+        .info-content p:first-child {
+            font-weight: bold;
+            color: #4b5563;
+            margin-bottom: 3px;
+        }
+        
+        .info-content p:last-child {
+            color: #6b7280;
+        }
+        
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #4b5563;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            background-color: #b91c1c;
+        }
+        
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        footer p:last-child {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>注意！！！緊急尋人啟事</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="alert">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+                <h2>緊急尋人</h2>
+                <p>請協助尋找失蹤人士。如有任何線索，請立即聯繫下方提供的電話號碼。</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div>
+                <h2 class="section-title">失蹤者照片</h2>
+                <div class="carousel">
+                    <div class="carousel-content" id="carousel">
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/400x400?text=照片1" alt="失蹤者照片 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/400x400?text=照片2" alt="失蹤者照片 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/400x400?text=照片3" alt="失蹤者照片 3">
+                        </div>
+                    </div>
+                    <button class="carousel-button carousel-prev" onclick="prevSlide()">❮</button>
+                    <button class="carousel-button carousel-next" onclick="nextSlide()">❯</button>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="section-title">失蹤者資料</h2>
+                <div class="card">
+                    <div class="card-content">
+                        <ul class="info-list">
+                            <li class="info-item">
+                                <div class="info-icon">👤</div>
+                                <div class="info-content">
+                                    <p>特徵描述</p>
+                                    <p>身高約170公分，體重約85公斤，黑短髮，戴眼鏡，最後穿著藍色T恤和黑色長褲。</p>
+									<p>抓漏/滅鼠/落跑/保全/車隊司機</p>
+									<p>👉江為詮 0983072890</p>
+									<p>優點：跑步快 看到喇牙跑更快  交付任務偶爾會達成 但需要工作時間比正常人要多抓三個禮拜</p>
+									<p>跑車路線：寶山線 南寮線 科園線 寶二水庫觀光線（最新開發）</p>
+                                </div>
+                            </li>
+                            <li class="info-item">
+                                <div class="info-icon">📍</div>
+                                <div class="info-content">
+                                    <p>最後出現地點</p>
+                                    <p>新竹寶山鄉雙園三街31號附近</p>
+                                </div>
+                            </li>
+                            <li class="info-item">
+                                <div class="info-icon">🕒</div>
+                                <div class="info-content">
+                                    <p>失蹤時間</p>
+                                    <p>2025年3月12日 晚上8點左右</p>
+                                </div>
+                            </li>
+                            <li class="info-item">
+                                <div class="info-icon">📞</div>
+                                <div class="info-content">
+                                    <p>聯絡電話</p>
+                                    <p>0938-101-822（24小時專線）</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="section-title">提供線索</h2>
+            <div class="card">
+                <div class="card-content">
+                    <form id="tipForm">
+                        <div class="form-group">
+                            <label for="name">您的姓名</label>
+                            <input type="text" id="name" placeholder="請輸入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">聯絡方式</label>
+                            <input type="text" id="contact" placeholder="請輸入您的電話或電子郵件">
+                        </div>
+                        <div class="form-group">
+                            <label for="info">線索資訊</label>
+                            <textarea id="info" placeholder="請詳細描述您所見到的相關資訊，包括時間、地點等"></textarea>
+                        </div>
+                        <button type="submit">提交線索</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <h2 class="section-title">重要提醒</h2>
+            <div class="card">
+                <div class="card-content">
+                    <p style="margin-bottom: 15px;">如果您有任何關於失蹤者的資訊，無論多麼微小，都請立即聯繫我們。您的一個小線索可能是找到失蹤者的關鍵。</p>
+                    <p>請注意，所有提供的資訊都將被保密處理。感謝您的協助！</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>緊急聯絡電話：0938-101-822</p>
+            <p>© <script>document.write(new Date().getFullYear())</script> 尋人啟事網站 | 請廣為分享，協助尋找失蹤者</p>
+        </div>
+    </footer>
+
+    <script>
+        // 輪播功能
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const carousel = document.getElementById('carousel');
+        
+        function showSlide(index) {
+            if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+            
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        
+        // 表單提交
+        document.getElementById('tipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感謝您提供線索，我們會盡快抓人到案！');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
